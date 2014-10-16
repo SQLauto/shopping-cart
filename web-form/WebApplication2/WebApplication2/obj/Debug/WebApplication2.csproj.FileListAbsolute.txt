@@ -4,3 +4,9 @@ D:\VS projects\WebApplication2\WebApplication2\bin\WebApplication2.pdb
 D:\VS projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 D:\VS projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
 D:\VS projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\bin\WebApplication2.dll
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+D:\VS projects\SCW\web-form\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
