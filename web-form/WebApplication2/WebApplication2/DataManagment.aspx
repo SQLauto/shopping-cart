@@ -20,7 +20,19 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="True">
         </asp:GridView>
         <br />
-        <asp:Button ID="Button2" runat="server" Text="Add new product" />
+        <hr />
+        <strong>Add new product</strong>:<br />
+        Category ID:<asp:TextBox ID="TextBox2" runat="server" Width="22px"></asp:TextBox>
+&nbsp;Title:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+&nbsp;Short Description:<asp:TextBox ID="TextBox4" runat="server" Width="370px"></asp:TextBox>
+&nbsp;<br />
+        Long Description:<asp:TextBox ID="TextBox5" runat="server" Width="819px"></asp:TextBox>
+        <br />
+        Image URL:<asp:TextBox ID="TextBox6" runat="server" Width="413px"></asp:TextBox>
+        <br />
+        Price:<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <br />
+        <asp:Button ID="insertButton" runat="server" OnClick="Button2_Click" Text="Add new product" />
     </form>
 </body>
 </html>

@@ -51,19 +51,39 @@ namespace WebApplication2
                 GridView1.DataBind();
             }
 
-            //con.Open();
-
-            //SqlDataReader dr2 = cmd2.ExecuteReader();
-            //GridView1.DataSource = dr2;
-            //GridView1.DataBind();
-
-            //con.Close();
+         
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
+
+        //Insert New Product
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("InsertProduct", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            
+            cmd.Parameters.AddWithValue("@CategoryID", TextBox2.Text);
+            cmd.Parameters.AddWithValue("@Title", TextBox3.Text);
+            cmd.Parameters.AddWithValue("@ShortDescription", TextBox4.Text);
+            cmd.Parameters.AddWithValue("@LongDescription", TextBox5.Text);
+            cmd.Parameters.AddWithValue("@ImageUrl", TextBox6.Text);
+            cmd.Parameters.AddWithValue("@Price", TextBox7.Text);
+
+            con.Open();
+            int update = cmd.ExecuteNonQuery();
+            con.Close();
+            System.Diagnostics.Debug.WriteLine("Update results:{0}",update);
+        }
+
+        
+
+       
+        
 
         
     }
