@@ -109,7 +109,8 @@ namespace WebApplication2
             cmd2.Parameters.AddWithValue("@ShortDescription", ((TextBox)GridView1.Rows[e.RowIndex].Cells[4].Controls[0]).Text);
             cmd2.Parameters.AddWithValue("@LongDescription", ((TextBox)GridView1.Rows[e.RowIndex].Cells[5].Controls[0]).Text);
             cmd2.Parameters.AddWithValue("@ImageUrl", ((TextBox)GridView1.Rows[e.RowIndex].Cells[6].Controls[0]).Text);
-            cmd2.Parameters.AddWithValue("@Price",(int)Convert.ToInt32(((TextBox)GridView1.Rows[e.RowIndex].Cells[7].Controls[0]).Text));
+            
+            cmd2.Parameters.AddWithValue("@Price",string.Format("{0:#.00}",Convert.ToDecimal(((TextBox)GridView1.Rows[e.RowIndex].Cells[7].Controls[0]).Text)));
             
             con.Open();
             int update = cmd2.ExecuteNonQuery();
