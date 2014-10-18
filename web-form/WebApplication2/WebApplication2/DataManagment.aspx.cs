@@ -122,7 +122,16 @@ namespace WebApplication2
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            SqlConnection con = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+            SqlCommand cmd2 = new SqlCommand("spDeleteProduct", con);
+            cmd2.CommandType = CommandType.StoredProcedure;
 
+            cmd2.Parameters.AddWithValue("@pID", Convert.ToInt32(GridView1.Rows[e.RowIndex].Cells[1].Text.ToString())); 
+            con.Open();
+            int result = cmd2.ExecuteNonQuery();
+            con.Close();
+            System.Diagnostics.Debug.WriteLine("Results for deleting:{0}", result);
+            BindGridView();
         }
 
 
