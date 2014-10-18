@@ -1,0 +1,32 @@
+﻿@model ShoppingStore.Domain.Entities.Cart
+
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Item</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Subtotal</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.Lines)
+        {
+            <tr>
+                <td class="text-center">@cartItem.Quantity</td>
+                <td class="text-center">@cartItem.Product.Title</td>
+                <td class="text-center">@cartItem.Product.Price.ToString("c")</td>
+                <td class="text-center">
+                    @((cartItem.Quantity * cartItem.Product.Price).ToString("c"))
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot></tfoot>
+</table>
+<div style="clear:both;"></div>
+<div class="totalPrice">
+    <span class="text-right">Total:</span>
+    <span class="text-right">@Model.ComputeTotalValue().ToString("c")</span>
+</div>

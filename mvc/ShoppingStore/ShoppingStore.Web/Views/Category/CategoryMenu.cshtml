@@ -1,0 +1,24 @@
+﻿@using ShoppingStore.Domain.Entities;
+@model IEnumerable<Category>
+
+<div>
+    @Html.ActionLink("All Categories", 
+        "List", 
+        "Product",
+        null,
+                new { @class = (null == ViewBag.SelectedCategoryID ? "CateBtn-primary" : "CateBtn") })
+</div>
+@foreach (var cate in Model)
+{
+    <div>
+        @Html.RouteLink(cate.Title, new
+       {
+           controller = "Product",
+           action = "List",
+           categoryID = cate.CategoryID.ToString()
+       }, new
+       {
+           @class = (cate.CategoryID.ToString() == ViewBag.SelectedCategoryID ? "CateBtn-primary" : "CateBtn")
+       })
+    </div>
+}

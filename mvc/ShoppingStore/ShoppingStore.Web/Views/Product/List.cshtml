@@ -1,0 +1,25 @@
+﻿@using ShoppingStore.Domain.Entities;
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="product_panel">
+    <div>
+        <div id="cartViewer">
+            <a id="cartStatus" href="/Cart/Index">View The Cart (@Model.Count() Products)</a>
+        </div>
+    </div>    
+    <div id="categories">
+        @Html.Action("CategoryMenu", "Category")
+    </div>
+    <div id="products">
+        @foreach (var p in Model)
+        {
+            @Html.Partial("ProductInformation", p)
+        }
+    </div>
+</div>
+
+     

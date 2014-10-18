@@ -1,0 +1,24 @@
+﻿@model ShoppingStore.Domain.Entities.Product
+
+<div class="product">
+    <div>
+        <span class="title">@Model.Title</span>
+        <span class="price">@Model.Price.ToString("c")</span>
+    </div>
+    <div class="S_description">@Model.ShortDescription</div>
+
+    @using (Ajax.BeginForm("AddToCart","Cart",null,
+        new AjaxOptions
+        {
+            UpdateTargetId = "cartStatus",
+        }))
+    {
+        <div class="AddToCartArea">
+            @Html.HiddenFor(x => x.ProductID)
+            @Html.TextBox("quantity", 1, new { @class = "quantity" })
+            <input type="submit" class="AddToCartBtn" value="Add to cart" />
+        </div>
+    }
+    <div style="clear:both;"></div>
+    
+</div>

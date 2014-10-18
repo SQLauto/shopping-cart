@@ -1,0 +1,11 @@
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\ShoppingStore.Domain.dll.config
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\ShoppingStore.Domain.dll
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\ShoppingStore.Domain.pdb
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\EntityFramework.dll
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\Ninject.dll
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\EntityFramework.xml
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\Ninject.xml
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\obj\Debug\ShoppingStore.Domain.dll
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\obj\Debug\ShoppingStore.Domain.pdb
+F:\代写\追求卓越\shopping cart website\Project\ShoppingStore\ShoppingStore.Domain\obj\Debug\ShoppingStore.Domain.csprojResolveAssemblyReference.cache

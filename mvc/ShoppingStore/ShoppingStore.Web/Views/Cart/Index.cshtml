@@ -1,0 +1,61 @@
+﻿@using ShoppingStore.Web.Infrastructure;
+@model ShoppingStore.Web.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "Shopping Store Cart";
+}
+
+
+<style>
+    #cartTable td {
+        vertical-align: middle;
+    }
+</style>
+
+<h2 style="text-align:center;">Your Shopping Store Cart</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Item</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Subtotal</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center">@cartItem.Quantity</td>
+                <td class="text-center">@cartItem.Product.Title</td>
+                <td class="text-center">@cartItem.Product.Price.ToString("c")</td>
+                <td class="text-center">
+                    @((cartItem.Quantity * cartItem.Product.Price).ToString("c"))
+                </td>
+                <td class="text-center">
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("ProductId", cartItem.Product.ProductID)
+                        <input class="RemoveBtn" type="submit" value="Remove" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot></tfoot>
+</table>
+<div style="clear:both;"></div>
+<div class="pageNumber">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index",new { page = x}))
+</div>
+<div style="clear:both;"></div>
+<div class="totalPrice">
+    <span class="text-right">Total:</span>
+    <span class="text-right">@Model.Cart.ComputeTotalValue().ToString("c")</span>
+</div>
+<div style="clear:both;"></div>
+<div style="margin:0 auto;width:400px;display:block;">
+    @Html.ActionLink("Continue Shopping", "List", "Product", null, new { @class = "ContinueShoppingBtn" })
+    @Html.ActionLink("Checkout Now", "Checkout", null, new { @class = "CheckOutBtn" })
+</div>
