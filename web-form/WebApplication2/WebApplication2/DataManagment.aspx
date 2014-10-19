@@ -15,11 +15,10 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
         &nbsp;<br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnUnload="GridView1_Unload">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:ButtonField Text="Upload" />
             </Columns>
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -31,10 +30,7 @@
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
         <br />
-        <strong>Choose Image File:</strong>
-        <asp:FileUpload ID="FileUpload1" runat="server" />
-        <br />
-        <strong>Then click Upload</strong><br />
+        <a href="UploadImage.aspx">Upload Image</a>
         <br />
         <hr />
         <strong>Add new product</strong>:<br />
@@ -49,7 +45,8 @@
         Price:<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="insertButton" runat="server" OnClick="Button2_Click" Text="Add new product" />
-
+        &nbsp;
+        <asp:Label ID="newProductLabel" runat="server" EnableViewState="false" ForeColor="Green"></asp:Label>
         <hr />
 
         <strong>Delete Category:
@@ -58,7 +55,7 @@
             &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Delete" />
             &nbsp;<br />
         </strong>
-
+        <asp:Label ID="deleteProductLabel" runat="server" EnableViewState="false" ForeColor="Green"></asp:Label>
         <hr />
     </form>
 </body>

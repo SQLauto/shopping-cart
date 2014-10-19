@@ -49,15 +49,6 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// FileUpload1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
         /// TextBox2 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Button insertButton;
         
         /// <summary>
+        /// newProductLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label newProductLabel;
+        
+        /// <summary>
         /// DropDownList3 control.
         /// </summary>
         /// <remarks>
@@ -137,5 +137,14 @@ namespace WebApplication2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// deleteProductLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label deleteProductLabel;
     }
 }

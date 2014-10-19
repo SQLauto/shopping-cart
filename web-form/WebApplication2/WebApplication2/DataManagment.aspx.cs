@@ -50,10 +50,7 @@ namespace WebApplication2
             BindGridView();
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Insert New Product
         protected void Button2_Click(object sender, EventArgs e)
@@ -74,6 +71,7 @@ namespace WebApplication2
             int update = cmd.ExecuteNonQuery();
             con.Close();
             System.Diagnostics.Debug.WriteLine("Update results:{0}", update);
+            newProductLabel.Text = "New product added successfully.";
         }
 
         private void BindGridView()
@@ -143,11 +141,7 @@ namespace WebApplication2
             BindGridView();
         }
 
-        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    
         protected void Button2_Click1(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(DropDownList3.SelectedValue);
@@ -181,6 +175,12 @@ namespace WebApplication2
             DropDownList3.DataSource = dr2;
             DropDownList3.DataBind();
             con2.Close();
+            deleteProductLabel.Text = "Category and corresponding product is deleted.";
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,16 +188,11 @@ namespace WebApplication2
 
         }
 
-        protected void GridView1_Unload(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
 
-
-
-
-
-
-
+       
     }
 }
