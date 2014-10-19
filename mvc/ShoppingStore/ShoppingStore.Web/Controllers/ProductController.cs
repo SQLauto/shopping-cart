@@ -21,12 +21,13 @@ namespace ShoppingStore.Web.Controllers
 
         public ViewResult List(string categoryID)
         {
-            IEnumerable<Product> CateProducts = 
-                repository.Products.
-                Where(p => categoryID == null || p.CategoryID == int.Parse(categoryID)).
-                OrderBy(p => p.ProductID);
+            IEnumerable<Product> CateProducts =
+                    repository.Products.
+                    Where(p => categoryID == null || p.CategoryID == int.Parse(categoryID)).
+                    OrderBy(p => p.ProductID);
             ViewBag.CurrentCategoryID = categoryID;
             return View(CateProducts);
+
         }
 
 

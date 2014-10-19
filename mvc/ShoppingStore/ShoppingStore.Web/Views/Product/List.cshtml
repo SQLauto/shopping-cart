@@ -2,13 +2,13 @@
 @model IEnumerable<Product>
 
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Products";    
 }
 
 <div class="product_panel">
     <div>
         <div id="cartViewer">
-            <a id="cartStatus" href="/Cart/Index">View The Cart (@Model.Count() Products)</a>
+            <a id="cartStatus" href="/Cart/Index">View The Cart (@ViewBag.CartItemCounts Products)</a>
         </div>
     </div>    
     <div id="categories">

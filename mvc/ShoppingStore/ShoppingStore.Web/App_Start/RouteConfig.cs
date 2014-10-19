@@ -29,7 +29,8 @@ namespace ShoppingStore.Web
                 {
                     controller = "Product",
                     action = "List"
-                }
+                },
+                new { categoryID = @"\d+" }
             );
 
             routes.MapRoute(null, "{controller}/{action}");
@@ -37,7 +38,7 @@ namespace ShoppingStore.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Product", action = "List"}
+                defaults: new { controller = "Product", action = "List" }
             );
         }
     }

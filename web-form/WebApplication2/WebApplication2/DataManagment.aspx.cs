@@ -183,6 +183,16 @@ namespace WebApplication2
             con2.Close();
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_Unload(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

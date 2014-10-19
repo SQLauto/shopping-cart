@@ -8,19 +8,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    
-    
         Select Category:
-        <asp:DropDownList ID="DropDownList1" runat="server"  DataTextField="Title" DataValueField="CategoryID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="DropDownList1" runat="server" DataTextField="Title" DataValueField="CategoryID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
         </asp:DropDownList>
-&nbsp;
+        &nbsp;
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
-&nbsp;<br />
+        &nbsp;<br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnUnload="GridView1_Unload">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:ButtonField Text="Upload" />
             </Columns>
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -32,12 +31,17 @@
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
         <br />
+        <strong>Choose Image File:</strong>
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <br />
+        <strong>Then click Upload</strong><br />
+        <br />
         <hr />
         <strong>Add new product</strong>:<br />
         Category ID:<asp:TextBox ID="TextBox2" runat="server" Width="22px"></asp:TextBox>
-&nbsp;Title:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-&nbsp;Short Description:<asp:TextBox ID="TextBox4" runat="server" Width="370px"></asp:TextBox>
-&nbsp;<br />
+        &nbsp;Title:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        &nbsp;Short Description:<asp:TextBox ID="TextBox4" runat="server" Width="370px"></asp:TextBox>
+        &nbsp;<br />
         Long Description:<asp:TextBox ID="TextBox5" runat="server" Width="819px"></asp:TextBox>
         <br />
         Image URL:<asp:TextBox ID="TextBox6" runat="server" Width="413px"></asp:TextBox>
@@ -49,9 +53,13 @@
         <hr />
 
         <strong>Delete Category:
-        <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Title" DataValueField="CategoryID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="DropDownList3" runat="server" DataTextField="Title" DataValueField="CategoryID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
         </asp:DropDownList>
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Delete" />
-&nbsp;</strong></form>
+            &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Delete" />
+            &nbsp;<br />
+        </strong>
+
+        <hr />
+    </form>
 </body>
 </html>
