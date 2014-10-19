@@ -45,6 +45,13 @@
         Price:<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="insertButton" runat="server" OnClick="Button2_Click" Text="Add new product" />
-    </form>
+
+        <hr />
+
+        <strong>Delete Category:
+        <asp:DropDownList ID="DropDownList3" runat="server"  DataTextField="Title" DataValueField="CategoryID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList>
+&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Delete" />
+&nbsp;</strong></form>
 </body>
 </html>

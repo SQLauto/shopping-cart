@@ -17,17 +17,26 @@ namespace WebApplication2
             {
                 //Connect to DB
                 SqlConnection con = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
-
                 //Display Category
                 SqlCommand cmd = new SqlCommand("getCategory", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 DropDownList1.DataSource = dr;
                 DropDownList1.DataBind();
-
                 con.Close();
+
+
+                SqlConnection con2 = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+                //Display Category
+                SqlCommand cmd2 = new SqlCommand("getCategory", con);
+                cmd2.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+                SqlDataReader dr2 = cmd.ExecuteReader();
+                DropDownList3.DataSource = dr2;
+                DropDownList3.DataBind();
+                con2.Close();
 
                 //Display Gridview in the first time
                 BindGridView();
@@ -132,6 +141,46 @@ namespace WebApplication2
             con.Close();
             System.Diagnostics.Debug.WriteLine("Results for deleting:{0}", result);
             BindGridView();
+        }
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(DropDownList3.SelectedValue);
+            SqlConnection con = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+            SqlCommand cmd2 = new SqlCommand("spDeleteCategory", con);
+            cmd2.CommandType = CommandType.StoredProcedure;
+
+            cmd2.Parameters.AddWithValue("@cID", DropDownList3.SelectedValue);
+            con.Open();
+            int result = cmd2.ExecuteNonQuery();
+            con.Close();
+            System.Diagnostics.Debug.WriteLine("Results for deleting:{0}", result);
+            BindGridView();
+
+            SqlConnection conn = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+            //Display Category
+            SqlCommand cmd = new SqlCommand("getCategory", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            DropDownList1.DataSource = dr;
+            DropDownList1.DataBind();
+            conn.Close();
+
+
+            SqlConnection con2 = new SqlConnection("data source=0C6TRJSHJS7AV3Z; database=webform_s3301108;Integrated Security=True");
+            SqlCommand cmd3 = new SqlCommand("getCategory", con2);
+            cmd3.CommandType = CommandType.StoredProcedure;
+            con2.Open();
+            SqlDataReader dr2 = cmd3.ExecuteReader();
+            DropDownList3.DataSource = dr2;
+            DropDownList3.DataBind();
+            con2.Close();
         }
 
 
